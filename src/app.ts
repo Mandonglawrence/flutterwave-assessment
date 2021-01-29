@@ -3,6 +3,7 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import checkRequiredFields from "./middlewares/checkRequiredField";
 import isRuleValidJson from "./middlewares/isRuleValidJsonObject";
+import checks from "./middlewares/checkRuleAndDataPropertyTypes";
 
 import myConnection  from "./bin/www/connection";
 
@@ -26,7 +27,12 @@ app.get("/",(_req:express.Request, res: express.Response)=>{
   return;
 })
 
-app.post("/validate-rule", checkRequiredFields,isRuleValidJson,(req:express.Request,res:express.Response)=>{
+app.post("/validate-rule", 
+checkRequiredFields,
+isRuleValidJson, 
+checks.checkRuleAndDataPropertyTypes, 
+checks.isFieldInData, 
+(req:express.Request,res:express.Response)=>{
   res.send(req.body);
   return;
 })

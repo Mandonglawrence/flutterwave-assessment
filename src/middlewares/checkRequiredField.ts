@@ -1,7 +1,5 @@
 import {Request, Response, NextFunction} from "express";
  const checkRequiredFields = (req:Request, res:Response, next:NextFunction)=>{
-  
-  
   if(typeof (req.body) === 'object' && !Array.isArray(req.body)){
     const {rule, data} = req.body;
     if(!rule){
@@ -21,14 +19,12 @@ import {Request, Response, NextFunction} from "express";
       next();
   }
   else{
-    
     res.status(400).send({
     "message": "Invalid JSON payload passed.",
     "status": "error",
     "data": null
     });
     return;
- 
 }
 }
 export default checkRequiredFields;
