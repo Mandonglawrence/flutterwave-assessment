@@ -1,0 +1,36 @@
+{
+  "name": "flutterwave-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Mandonglawrence/flutterwave-assessment.git",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "install": "^0.13.0",
+    "jest": "^26.4.2",
+    "joi": "^17.2.1",
+    "loadash": "^1.0.0",
+    "morgan": "^1.10.0",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/http-errors": "^1.8.0",
+    "@types/jest": "^26.0.13",
+    "@types/morgan": "^1.9.1",
+    "nodemon": "^2.0.4",
+    "@types/bcrypt": "^3.0.0",
+    "@types/joi": "^14.3.4",
+    "@types/lodash": "^4.14.161",
+    "@types/long": "^4.0.1"
+  },
+  "scripts": {
+    "test": "jest  --detectOpenHandles --testEnvironment=node --unhandled-rejections=strict --verbose --forceExit  --maxWorkers=1",
+    "start": "nodemon ./dist/index.js",
+    "tsc": "tsc"
+  }
+}
