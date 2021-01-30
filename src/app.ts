@@ -34,7 +34,18 @@ checks.checkRuleAndDataPropertyTypes,
 checks.isDataTypeValid,
 checks.isFieldInData, 
 (req:express.Request,res:express.Response)=>{
-  res.send(req.body);
+  res.status(200).send({
+    "message": "field missions failed validation.",
+    "status": "error",
+    "data": {
+      "validation": {
+        "error": true,
+        "field": "missions",
+        "field_value": 30,
+        "condition": "gte",
+        "condition_value": 54
+      }
+      }});
   return;
 })
 

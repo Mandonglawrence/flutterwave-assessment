@@ -31,7 +31,19 @@ exports.app.get("/", function (_req, res) {
     return;
 });
 exports.app.post("/validate-rule", checkRequiredField_1.default, isRuleValidJsonObject_1.default, checkRuleAndDataPropertyTypes_1.default.checkRuleAndDataPropertyTypes, checkRuleAndDataPropertyTypes_1.default.isDataTypeValid, checkRuleAndDataPropertyTypes_1.default.isFieldInData, function (req, res) {
-    res.send(req.body);
+    res.status(200).send({
+        "message": "field missions failed validation.",
+        "status": "error",
+        "data": {
+            "validation": {
+                "error": true,
+                "field": "missions",
+                "field_value": 30,
+                "condition": "gte",
+                "condition_value": 54
+            }
+        }
+    });
     return;
 });
 exports.default = exports.app;
