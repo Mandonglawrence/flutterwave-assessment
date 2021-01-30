@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import checkRequiredFields from "./middlewares/checkRequiredField";
 import isRuleValidJson from "./middlewares/isRuleValidJsonObject";
 import checks from "./middlewares/checkRuleAndDataPropertyTypes";
+import validateField from "./middlewares/runFieldValidation";
 
 import myConnection  from "./bin/www/connection";
 
@@ -33,6 +34,7 @@ isRuleValidJson,
 checks.checkRuleAndDataPropertyTypes, 
 checks.isDataTypeValid,
 checks.isFieldInData, 
+validateField,
 (req:express.Request,res:express.Response)=>{
   res.status(200).send({
     "message": "field missions failed validation.",

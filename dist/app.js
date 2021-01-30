@@ -9,6 +9,7 @@ var morgan_1 = __importDefault(require("morgan"));
 var checkRequiredField_1 = __importDefault(require("./middlewares/checkRequiredField"));
 var isRuleValidJsonObject_1 = __importDefault(require("./middlewares/isRuleValidJsonObject"));
 var checkRuleAndDataPropertyTypes_1 = __importDefault(require("./middlewares/checkRuleAndDataPropertyTypes"));
+var runFieldValidation_1 = __importDefault(require("./middlewares/runFieldValidation"));
 var connection_1 = __importDefault(require("./bin/www/connection"));
 connection_1.default();
 exports.app = express_1.default();
@@ -30,7 +31,7 @@ exports.app.get("/", function (_req, res) {
     });
     return;
 });
-exports.app.post("/validate-rule", checkRequiredField_1.default, isRuleValidJsonObject_1.default, checkRuleAndDataPropertyTypes_1.default.checkRuleAndDataPropertyTypes, checkRuleAndDataPropertyTypes_1.default.isDataTypeValid, checkRuleAndDataPropertyTypes_1.default.isFieldInData, function (req, res) {
+exports.app.post("/validate-rule", checkRequiredField_1.default, isRuleValidJsonObject_1.default, checkRuleAndDataPropertyTypes_1.default.checkRuleAndDataPropertyTypes, checkRuleAndDataPropertyTypes_1.default.isDataTypeValid, checkRuleAndDataPropertyTypes_1.default.isFieldInData, runFieldValidation_1.default, function (req, res) {
     res.status(200).send({
         "message": "field missions failed validation.",
         "status": "error",
