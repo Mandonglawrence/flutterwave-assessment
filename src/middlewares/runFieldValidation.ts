@@ -7,7 +7,7 @@ function validateField(req:Request,res:Response, next:NextFunction) {
     // if(typeof data === 'object' && !isArray(data)){
         switch(condition){
             case'gte':
-                if(condition_value >= data[field]){
+                if(data[field] >= condition_value){
                     res.status(200).send({
                         "message": `field ${field} successfully validated.`,
                         "status": "success",
@@ -36,7 +36,7 @@ function validateField(req:Request,res:Response, next:NextFunction) {
                     }
                       break;
             case "eq":
-                if(condition_value === data[field]){
+                if( data[field] === condition_value){
                     res.status(200).send({
                         "message": `field ${field} successfully validated.`,
                         "status": "success",
@@ -65,7 +65,7 @@ function validateField(req:Request,res:Response, next:NextFunction) {
                     }
                       break;
             case "neq":
-                if(condition_value !== data[field]){
+                if( data[field] !== condition_value ){
                     res.status(200).send({
                         "message": `field ${field} successfully validated.`,
                         "status": "success",
@@ -94,7 +94,7 @@ function validateField(req:Request,res:Response, next:NextFunction) {
                     }
                       break;
             case "gt":
-                if(condition_value > data[field]){
+                if( data[field] > condition_value){
                     res.status(200).send({
                         "message": `field ${field} successfully validated.`,
                         "status": "success",
