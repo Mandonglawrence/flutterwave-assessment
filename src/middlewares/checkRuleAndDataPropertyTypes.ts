@@ -30,8 +30,24 @@ function checkRuleAndDataPropertyTypes(req:Request,res:Response, next:NextFuncti
             "status": "error",
             "data": null
           })
+          return;
       }
       next();
 
   }
-  export default {checkRuleAndDataPropertyTypes, isFieldInData};
+  const isDataTypeValid = (req:Request,res:Response, next:NextFunction)=>{
+
+      const { data } = req.body;
+      const validType = ["object", "array", "string"];
+      if(!validType.includes(typeof data)){
+          res.status(400).send({
+            "message": `data should be an object, array or a string.`,
+            "status": "error",
+            "data": null
+          })
+          return;
+      }
+      next();
+
+  }
+  export default {checkRuleAndDataPropertyTypes, isFieldInData, isDataTypeValid};

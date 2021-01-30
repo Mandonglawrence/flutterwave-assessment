@@ -32,6 +32,7 @@ checkRequiredFields,
 isRuleValidJson, 
 checks.checkRuleAndDataPropertyTypes, 
 checks.isFieldInData, 
+checks.isDataTypeValid,
 (req:express.Request,res:express.Response)=>{
   res.send(req.body);
   return;
