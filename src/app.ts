@@ -34,22 +34,6 @@ isRuleValidJson,
 checks.checkRuleAndDataPropertyTypes, 
 checks.isDataTypeValid,
 checks.isFieldInData, 
-validateField,
-// (req:express.Request,res:express.Response)=>{
-//   res.status(200).send({
-//     "message": "field missions failed validation.",
-//     "status": "error",
-//     "data": {
-//       "validation": {
-//         "error": true,
-//         "field": "missions",
-//         "field_value": 30,
-//         "condition": "gte",
-//         "condition_value": 54
-//       }
-//       }});
-//   return;
-// }
-)
+validateField)
 
 export default app;
