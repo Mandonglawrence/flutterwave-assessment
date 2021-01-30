@@ -31,8 +31,8 @@ app.post("/validate-rule",
 checkRequiredFields,
 isRuleValidJson, 
 checks.checkRuleAndDataPropertyTypes, 
-checks.isFieldInData, 
 checks.isDataTypeValid,
+checks.isFieldInData, 
 (req:express.Request,res:express.Response)=>{
   res.send(req.body);
   return;
