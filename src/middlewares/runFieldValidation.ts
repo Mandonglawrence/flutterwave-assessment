@@ -32,7 +32,38 @@ function validateField(req:Request,res:Response, next:NextFunction) {
                         "condition": condition,
                         "condition_value": condition_value
                       }
-                      }})}
+                      }});
+                    }
+                      break;
+            case "eq":
+                if(condition_value === data[field]){
+                    res.status(200).send({
+                        "message": `field ${field} passed validation.`,
+                        "status": "success",
+                        "data": {
+                          "validation": {
+                            "error": false,
+                            "field": field,
+                            "field_value": data[field],
+                            "condition": condition,
+                            "condition_value": condition_value
+                          }
+                          }})
+                          return
+                }else{res.status(400).send({
+                    "message": `field ${field} failed validation.`,
+                    "status": "error",
+                    "data": {
+                      "validation": {
+                        "error": true,
+                        "field": field,
+                        "field_value": data[field],
+                        "condition": condition,
+                        "condition_value": condition_value
+                      }
+                      }});
+                    }
+                      break;
 
         }
     }
