@@ -30,7 +30,7 @@ exports.app.get("/", function (_req, res) {
     });
     return;
 });
-exports.app.post("/validate-rule", checkRequiredField_1.default, isRuleValidJsonObject_1.default, checkRuleAndDataPropertyTypes_1.default.checkRuleAndDataPropertyTypes, checkRuleAndDataPropertyTypes_1.default.isFieldInData, function (req, res) {
+exports.app.post("/validate-rule", checkRequiredField_1.default, isRuleValidJsonObject_1.default, checkRuleAndDataPropertyTypes_1.default.checkRuleAndDataPropertyTypes, checkRuleAndDataPropertyTypes_1.default.isDataTypeValid, checkRuleAndDataPropertyTypes_1.default.isFieldInData, function (req, res) {
     res.send(req.body);
     return;
 });

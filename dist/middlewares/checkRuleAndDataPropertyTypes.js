@@ -29,7 +29,21 @@ var isFieldInData = function (req, res, next) {
             "status": "error",
             "data": null
         });
+        return;
     }
     next();
 };
-exports.default = { checkRuleAndDataPropertyTypes: checkRuleAndDataPropertyTypes, isFieldInData: isFieldInData };
+var isDataTypeValid = function (req, res, next) {
+    var data = req.body.data;
+    var validType = ["object", "array", "string"];
+    if (!validType.includes(typeof data)) {
+        res.status(400).send({
+            "message": "data should be an object, array or a string.",
+            "status": "error",
+            "data": null
+        });
+        return;
+    }
+    next();
+};
+exports.default = { checkRuleAndDataPropertyTypes: checkRuleAndDataPropertyTypes, isFieldInData: isFieldInData, isDataTypeValid: isDataTypeValid };
