@@ -30,7 +30,7 @@
   },
   "scripts": {
     "test": "jest  --detectOpenHandles --testEnvironment=node --unhandled-rejections=strict --verbose --forceExit  --maxWorkers=1",
-    "start": "node ./dist/index.js",
-    "tsc": "npx tsc"
+    "tsc": "npx tsc",
+    "start": "node ./dist/index.js"
   }
 }

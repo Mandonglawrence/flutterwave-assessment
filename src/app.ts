@@ -1,11 +1,9 @@
 import express from "express";
 import morgan from "morgan";
-import bodyParser from "body-parser";
 import checkRequiredFields from "./middlewares/checkRequiredField";
 import isRuleValidJson from "./middlewares/isRuleValidJsonObject";
 import checks from "./middlewares/checkRuleAndDataPropertyTypes";
 import validateField from "./middlewares/runFieldValidation";
-
 import myConnection  from "./bin/www/connection";
 
 myConnection();
